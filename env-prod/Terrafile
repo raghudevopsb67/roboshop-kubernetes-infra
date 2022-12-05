@@ -1,0 +1,27 @@
+vpc:
+  source:  "https://github.com/raghudevopsb67/tf-module-vpc"
+  version: "main"
+
+docdb:
+  source:  "https://github.com/raghudevopsb67/tf-module-docdb"
+  version: "main"
+
+rds:
+  source:  "https://github.com/raghudevopsb67/tf-module-rds"
+  version: "main"
+
+elasticache:
+  source:  "https://github.com/raghudevopsb67/tf-module-elasticache"
+  version: "main"
+
+rabbitmq:
+  source: "https://github.com/raghudevopsb67/tf-module-rabbitmq"
+  version: "main"
+
+app-setup:
+  source: "https://github.com/raghudevopsb67/tf-module-mutable-app-setup"
+  version: "main"
+
+alb:
+  source: "https://github.com/raghudevopsb67/tf-module-alb"
+  version: "main"
