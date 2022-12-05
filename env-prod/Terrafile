@@ -18,10 +18,10 @@ rabbitmq:
   source: "https://github.com/raghudevopsb67/tf-module-rabbitmq"
   version: "main"
 
-app-setup:
-  source: "https://github.com/raghudevopsb67/tf-module-mutable-app-setup"
-  version: "main"
-
 alb:
   source: "https://github.com/raghudevopsb67/tf-module-alb"
+  version: "main"
+
+eks:
+  source: "https://github.com/r-devops/tf-module-eks.git"
   version: "main"
