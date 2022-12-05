@@ -82,14 +82,14 @@ module "alb" {
 }
 
 module "EKS" {
-  source             = "./vendor/modules/eks/"
-  ENV                = var.env
-  PRIVATE_SUBNET_IDS = local.apps_subnets_ids
-  PUBLIC_SUBNET_IDS  = local.public_subnets_ids
-  for_each           = var.eks
-  DESIRED_SIZE       = each.value.DESIRED_SIZE
-  MAX_SIZE           = each.value.MAX_SIZE
-  MIN_SIZE           = each.value.MIN_SIZE
-  CREATE_ALB_INGRESS = each.value.CREATE_ALB_INGRESS
+  source                  = "./vendor/modules/eks/"
+  ENV                     = var.env
+  PRIVATE_SUBNET_IDS      = flatten([for i, j in module.vpc : j.private_subnets["database"]["subnets"][*].id])
+  PUBLIC_SUBNET_IDS       = flatten([for i, j in module.vpc : j.public_subnets["public"]["subnets"][*].id])
+  DESIRED_SIZE            = 1
+  MAX_SIZE                = 1
+  MIN_SIZE                = 1
+  CREATE_ALB_INGRESS      = false
+  CREATE_EXTERNAL_SECRETS = false
+  INSTALL_KUBE_METRICS    = false
 }
-
