@@ -92,4 +92,5 @@ module "EKS" {
   CREATE_ALB_INGRESS      = false
   CREATE_EXTERNAL_SECRETS = false
   INSTALL_KUBE_METRICS    = false
+  CREATE_SCP              = true
 }
